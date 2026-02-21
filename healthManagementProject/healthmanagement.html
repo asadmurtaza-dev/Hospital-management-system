@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Health Care Management</title>
+  <link rel="stylesheet" href="healthmaangement.css">
+</head>
+
+<body>
+  <div class="container">
+
+
+    <h2 style="font-size:30px;">Health Care Management</h2>
+    <div id="message"></div>
+
+    <!-- Start Menu -->
+    <div id="startMenu"
+      style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 40px; ">
+      <button style="width: 300px; height: 50px;font-size: 20px;" onclick="showRegister()">Register</button>
+      <button style="width: 300px; height: 50px;font-size: 20px;" onclick="showLogin()">Login</button>
+
+    </div>
+
+
+    <!-- Register Section -->
+    <div id="registerSection" class="hidden">
+      <h3>Register</h3>
+      <input type="text" id="regName" placeholder="Enter Username">
+      <input type="email" id="regEmail" placeholder="Enter Email">
+      <input type="password" id="regPass" placeholder="Enter Password">
+      <button onclick="register()">Register</button>
+      <button onclick="goBackToStart()">Back</button>
+    </div>
+
+    <!-- Login Section -->
+    <div id="loginSection" class="hidden">
+      <h3>Login</h3>
+      <input type="email" id="loginEmail" placeholder="Enter Email">
+      <input type="password" id="loginPass" placeholder="Enter Password">
+      <button onclick="login()">Login</button>
+      <button onclick="goBackToStart()">Back</button>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="mainMenu" class="hidden">
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+
+        <button style="width: 200px; height:30px;font-size: 15px;padding: 2px;" onclick="showAddPerson()">Add
+          Person</button>
+        <button style="width: 200px; height: 30px;font-size: 15px;padding: 2px;" onclick="showRemovePerson()">Remove
+          Person</button>
+        <button style="width: 200px; height: 30px;font-size: 15px;padding: 2px;" onclick="viewPeople()">View All
+          People</button>
+        <button style="width: 200px; height: 30px;font-size: 15px;padding: 2px;" onclick="showUsersJSON()">Show Users
+          JSON</button>
+
+        <button style="width: 200px; height: 30px;font-size: 15px; padding: 2px;" onclick="logout()">Logout</button>
+
+      </div>
+
+    </div>
+    <!-- Show Users JSON Section -->
+    <div id="showUsersSection" class="hidden">
+      <h3>Registered Users Data (JSON)</h3>
+      <div style="height: 200px; overflow-y: scroll;">
+        <pre id="usersJSON" style="text-align:left; background:#f4f4f4; padding:10px; border-radius:6px;"></pre>
+      </div>
+
+      <button onclick="downloadUsersJSON()">Download JSON</button>
+
+      <button style="width: 200px; height: 30px; font-size: 15px;"
+        onclick="document.getElementById('uploadJsonInput').click()">
+        Upload JSON
+      </button>
+
+      <input type="file" id="uploadJsonInput" accept=".json" style="display:none" onchange="uploadJsonFile(event)">
+      <button onclick="showMainMenu()">Back</button>
+    </div>
+
+
+    <!-- Add Person -->
+    <div id="addPersonSection" class="hidden">
+      <h3>Add Person</h3>
+      <input type="text" id="personName" placeholder="Enter Person Name">
+      <select id="personType">
+        <option value="1">Doctor</option>
+        <option value="2">Patient</option>
+      </select>
+      <button onclick="addPerson()">Add</button>
+      <button onclick="showMainMenu()">Back</button>
+    </div>
+
+    <!-- Remove Person -->
+    <div id="removePersonSection" class="hidden">
+      <h3>Remove Person</h3>
+      <select id="removePersonDropdown"></select>
+      <button onclick="removeSelectedPerson()">Remove</button>
+      <button onclick="showMainMenu()">Back</button>
+    </div>
+
+
+    <!-- View People -->
+    <div id="viewPeopleSection" class="hidden">
+      <h3>All People</h3>
+      <div id="peopleList"></div>
+      <button onclick="showMainMenu()">Back</button>
+    </div>
+  </div>
+  <script src="healthmaangement.js"></script>
+</body>
+
+</html>

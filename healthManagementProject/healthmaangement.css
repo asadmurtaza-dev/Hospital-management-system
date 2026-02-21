@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;
+}
+
+.container {
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+h2 {
+  margin-bottom: 15px;
+}
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  background: #445c75;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover {
+  background: #071e36 ;
+}
+input {
+  width: 90%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+#message {
+  margin: 2px auto;
+  padding: 5px;
+  border-radius: 6px;
+  display: none;
+  width: fit-content;
+
+  
+}
+#message.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+#message.success {
+  background: #d4edda;
+  color: #155724;
+}
+.hidden {
+  display: none;
+}
+.list-item {
+  padding: 6px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+#removePersonDropdown {
+  width: 90%;
+  padding: 10px 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #070d14;
+  outline: none;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#removePersonDropdown:focus {
+  border-color: #263f27;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+#personType {
+  width: 25%;
+  padding: 10px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 15px;
+  background: #fff;
+  /* transition: border-color 0.3s ease, box-shadow 0.3s ease; */
+}
